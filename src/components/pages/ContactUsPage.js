@@ -34,6 +34,7 @@ export default function ContactUsPage() {
             <form
               className="space-y-6"
               onSubmit={handleSubmit((data) => {
+                // required in CA to console.log the data from the form once validation requirements are met
                 console.log('data', data);
               })}
             >
@@ -259,11 +260,3 @@ export default function ContactUsPage() {
     </>
   );
 }
-
-/*
-  This Tailwind example requires updating your template:
-  ```
-  <html class="h-full bg-gray-50">
-  <body class="h-full">
-  ```
-*/
