@@ -3,7 +3,7 @@ import Logo from '../assets/logo.jpg';
 import { useSelector } from 'react-redux';
 
 const Header = () => {
-  const amountOfOneItem = useSelector(store => store.cart.amountOfOneItem);   // ACCESS NUMBER OF ITEMS THAT USER HAS ADDED TO SHOPPING CART. In addition amountOfOneItem is defined in cartSlice.js, it is stored in Redux store and will be showed in header as a number
+  const { amountOfOneItem } = useSelector(store => store.cart);   // ACCESS NUMBER OF ITEMS THAT USER HAS ADDED TO SHOPPING CART. In addition amountOfOneItem is defined in cartSlice.js, it is stored in Redux store and will be showed in header as a number
   // const amountOfOneItem = useSelector(state => state.cart.amountOfOneItem); // ACCESS NUMBER OF ITEMS THAT USER HAS ADDED TO SHOPPING CART. In addition amountOfOneItem is defined in cartSlice.js, it is stored in Redux store and will be showed in header as a number
 
   return (
