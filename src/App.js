@@ -1,7 +1,6 @@
 // import './App.css';
 import Router from './routes/Router';
 import Header from './components/Header';
-import Layout from './components/Layout';
 import Footer from './components/Footer';
 
 function App() {
@@ -9,7 +8,6 @@ function App() {
     <>
       <Header />
       <Router />
-      <Layout />
       <Footer />
     </>
   );
