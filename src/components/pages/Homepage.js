@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchItems } from '../../store/modules/cartSlice';
+import { fetchItems } from '../../store/modules/listSlice';
 import { Link } from 'react-router-dom';
 
 export default function Homepage() {

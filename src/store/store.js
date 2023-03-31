@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import listReducer from './modules/cartSlice';
+import listReducer from './modules/listSlice';
 
 // creating store
 const store = configureStore({
