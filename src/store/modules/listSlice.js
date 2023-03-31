@@ -6,6 +6,11 @@ export const fetchItems = createAsyncThunk('fetchItems', async () => {
   return fetch(URL).then((response) => response.json()).catch((error) => console.log(error));
 });
 
+const URL_ITEM_ID = `https://api.noroff.dev/api/v1/online-shop/1`; //change to id
+export const fetchItem = createAsyncThunk('fetchItems', async () => {
+  return fetch(URL_ITEM_ID).then((response) => response.json()).catch((error) => console.log(error));
+});
+
 const initialState = {
   items: [],
   total: 0,
@@ -14,7 +19,11 @@ const initialState = {
 const listSlice = createSlice({
   name: 'list',
   initialState,
-  reducers: {},
+  reducers: {
+    // INSERT_ITEMS: (state, action) => {
+    //   state.items = action.payload;
+    // }
+  },
   extraReducers: {
     [fetchItems.fulfilled]: (state, action) => {
       console.log('action', action);
@@ -22,7 +31,7 @@ const listSlice = createSlice({
     },
     [fetchItems.rejected]: (state, action) => {
       console.log('fetch rejected', action);
-    }
+    },
   }
 });
 // console.log('cartSlice', cartSlice);
