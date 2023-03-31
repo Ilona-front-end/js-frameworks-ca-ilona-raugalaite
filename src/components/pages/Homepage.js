@@ -5,7 +5,7 @@ import { fetchItems } from '../../store/modules/cartSlice';
 import { Link } from 'react-router-dom';
 
 export default function Homepage() {
-  const { items } = useSelector(store => store.cart);
+  const { items } = useSelector(store => store.list);
   const dispatch = useDispatch();
 
   useEffect(() => {

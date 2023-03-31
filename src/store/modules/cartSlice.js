@@ -1,19 +1,18 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const URL = 'https://api.noroff.dev/api/v1/online-shop';
-
-export const fetchItems = createAsyncThunk('fetchItems', () => {
+// fetchItems gets all items available, while cartSlice is ment to show selected items to buy that are placed in the cart
+export const fetchItems = createAsyncThunk('fetchItems', async () => {
   return fetch(URL).then((response) => response.json()).catch((error) => console.log(error));
 });
 
 const initialState = {
   items: [],
-  amountOfOneItem: 0,
   total: 0,
 };
 
-const cartSlice = createSlice({
-  name: 'cart',
+const listSlice = createSlice({
+  name: 'list',
   initialState,
   reducers: {},
   extraReducers: {
@@ -28,4 +27,4 @@ const cartSlice = createSlice({
 });
 // console.log('cartSlice', cartSlice);
 
-export default cartSlice.reducer;
+export default listSlice.reducer;
