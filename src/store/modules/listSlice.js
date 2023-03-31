@@ -1,39 +1,48 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-
-const URL = 'https://api.noroff.dev/api/v1/online-shop';
-// fetchItems gets all items available, while cartSlice is ment to show selected items to buy that are placed in the cart
-export const fetchItems = createAsyncThunk('fetchItems', async () => {
-  return fetch(URL).then((response) => response.json()).catch((error) => console.log(error));
-});
-
-const URL_ITEM_ID = `https://api.noroff.dev/api/v1/online-shop/1`; //change to id
-export const fetchItem = createAsyncThunk('fetchItems', async () => {
-  return fetch(URL_ITEM_ID).then((response) => response.json()).catch((error) => console.log(error));
-});
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   items: [],
-  total: 0,
+  singleItem: {},
+  // total: 0,
 };
 
 const listSlice = createSlice({
   name: 'list',
   initialState,
   reducers: {
-    // INSERT_ITEMS: (state, action) => {
-    //   state.items = action.payload;
-    // }
-  },
-  extraReducers: {
-    [fetchItems.fulfilled]: (state, action) => {
-      console.log('action', action);
-      state.items = action.payload;
+    INSERT_ITEMS: (state, action) => { // state is current state, action is the payload (update)
+      state.items = action.payload; // payload is what we get from the API
     },
-    [fetchItems.rejected]: (state, action) => {
-      console.log('fetch rejected', action);
-    },
+    INSERT_SINGLE_ITEM: (state, action) => { // state is current state, action is the payload (update)
+      state.singleItem = action.payload; // payload is what we get from the API
+    }
   }
 });
-// console.log('cartSlice', cartSlice);
-
+console.log('listSlice', listSlice);
 export default listSlice.reducer;
+
+// Actions
+const { INSERT_ITEMS } = listSlice.actions;
+const { INSERT_SINGLE_ITEM } = listSlice.actions;
+
+// FETCH ALL ITEMS
+export const fetchItems = () => async dispatch => {
+  try {
+    const response = await fetch('https://api.noroff.dev/api/v1/online-shop');
+    const data = await response.json();
+    dispatch(INSERT_ITEMS(data)); // use INSERT_ITEMS to update items array
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+// FETCH SINGLE ITEM
+export const fetchItem = (id) => async dispatch => {
+  try {
+    const response = await fetch(`https://api.noroff.dev/api/v1/online-shop/${id}`);
+    const data = await response.json();
+    dispatch(INSERT_SINGLE_ITEM(data)); // use INSERT_SINGLE_ITEM to update singleItem object
+  } catch (error) {
+    console.log(error);
+  }
+}

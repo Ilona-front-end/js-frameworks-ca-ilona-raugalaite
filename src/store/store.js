@@ -1,11 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
-import listReducer from './modules/listSlice';
+import { combineReducers } from 'redux';
+import listSlice from './modules/listSlice';
+
+const reducer = combineReducers({
+  list: listSlice,
+});
 
 // creating store
 const store = configureStore({
-  reducer: {
-    list: listReducer,
-  },
+  reducer,
 });
 
 export default store;

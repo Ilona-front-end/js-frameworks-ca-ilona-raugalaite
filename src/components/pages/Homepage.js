@@ -5,7 +5,8 @@ import { fetchItems } from '../../store/modules/listSlice';
 import { Link } from 'react-router-dom';
 
 export default function Homepage() {
-  const { items } = useSelector(store => store.list);
+  const { items } = useSelector(state => state.list);
+  // console.log('items', items);
   const dispatch = useDispatch();
 
   useEffect(() => {
