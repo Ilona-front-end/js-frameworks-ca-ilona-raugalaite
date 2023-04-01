@@ -14,12 +14,14 @@ const ItemPage = () => {
     dispatch(fetchItem(id))
   }, [dispatch, id]);
 
+  console.log('singleItem', singleItem);
   const reviewsOfItem = singleItem.reviews;
+  console.log('reviewsOfItem extra data', reviewsOfItem);
 
   // TO DO Calculate what this discount is and display it on the page.
-  const price = singleItem.price;
-  const discountedPrice = singleItem.discountedPrice;
-  const discount = price - discountedPrice;
+  // const price = singleItem.price;
+  // const discountedPrice = singleItem.discountedPrice;
+  // const discount = price - discountedPrice;
 
   return (
     <>
@@ -61,10 +63,10 @@ const ItemPage = () => {
                 </button>
 
                 {/* Discount */}
-                <div className="mt-10">
+                {/* <div className="mt-10">
                   <h2 className="text-lg font-medium text-gray-900">Discount:</h2>
                   <div className="text-sm font-medium text-gray-700">Price went down and you save <span className="text-red-700">{discount}</span> NOK</div>
-                </div>
+                </div> */}
 
                 {/* Product details */}
                 <div className="mt-4">
@@ -77,11 +79,11 @@ const ItemPage = () => {
                   <h2 className="text-lg font-medium text-gray-900 mb-2">Recent reviews:</h2>
                   <div className="flex items-center">
                     <div>
-                      {reviewsOfItem.map((rev) => (
+                      {/* {reviewsOfItem.map((rev) => (
                         <div key={rev.id} className="group mb-4">
                           <p className="text-sm text-gray-900 flex items-center mb-2">
-                            <span class="inline-block h-8 w-8 overflow-hidden rounded-full bg-gray-100">
-                              <svg class="h-full w-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                            <span className="inline-block h-8 w-8 overflow-hidden rounded-full bg-gray-100">
+                              <svg className="h-full w-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
                               </svg>
                             </span>
@@ -90,7 +92,7 @@ const ItemPage = () => {
                           <p className="text-sm font-medium text-yellow-600">{rev.rating} stars</p>
                           <p className="text-sm font-medium text-gray-700">Comment: {rev.description}</p>
                         </div>
-                      ))}
+                      ))} */}
                     </div>
                   </div>
                 </div>
