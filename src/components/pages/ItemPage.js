@@ -14,9 +14,9 @@ const ItemPage = () => {
     dispatch(fetchItem(id))
   }, [dispatch, id]);
 
-  console.log('singleItem', singleItem);
-  const reviewsOfItem = singleItem.reviews;
-  console.log('reviewsOfItem extra data', reviewsOfItem);
+  // console.log('singleItem', singleItem);
+  // const reviewsOfItem = singleItem.reviews;
+  // console.log('reviewsOfItem extra data', reviewsOfItem);
 
   // TO DO Calculate what this discount is and display it on the page.
   // const price = singleItem.price;
