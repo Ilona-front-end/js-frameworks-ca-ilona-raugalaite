@@ -16,6 +16,11 @@ const ItemPage = () => {
 
   const reviewsOfItem = singleItem.reviews;
 
+  // TO DO Calculate what this discount is and display it on the page.
+  const price = singleItem.price;
+  const discountedPrice = singleItem.discountedPrice;
+  const discount = price - discountedPrice;
+
   return (
     <>
       <div className="bg-white">
@@ -55,8 +60,14 @@ const ItemPage = () => {
                   Add to cart
                 </button>
 
-                {/* Product details */}
+                {/* Discount */}
                 <div className="mt-10">
+                  <h2 className="text-lg font-medium text-gray-900">Discount:</h2>
+                  <div className="text-sm font-medium text-gray-700">Price went down and you save <span className="text-red-700">{discount}</span> NOK</div>
+                </div>
+
+                {/* Product details */}
+                <div className="mt-4">
                   <h2 className="text-lg font-medium text-gray-900">Description:</h2>
                   <div className="text-sm font-medium text-gray-700">{singleItem.description}</div>
                 </div>
