@@ -20,6 +20,8 @@ const ItemPage = () => {
     discountOnItem = Math.round(singleItem.price - singleItem.discountedPrice);
   }
 
+  // Reviews
+
   return (
     <>
       <div className="bg-white">
@@ -63,7 +65,7 @@ const ItemPage = () => {
                 {discountOnItem > 0 && (
                   <div className="mt-10">
                     <h2 className="text-lg font-medium text-gray-900">Discount:</h2>
-                    <div className="text-sm font-medium text-gray-700">Price went down and you save <span className="text-red-700">{discountOnItem}</span> NOK</div>
+                    <div className="text-sm font-medium text-gray-700">Price went down and you save <span className="text-medium text-red-700">{discountOnItem}</span> NOK</div>
                   </div>
                 )}
 
