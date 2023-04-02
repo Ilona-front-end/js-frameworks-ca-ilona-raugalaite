@@ -14,14 +14,11 @@ const ItemPage = () => {
     dispatch(fetchItem(id))
   }, [dispatch, id]);
 
-  // console.log('singleItem', singleItem);
-  // const reviewsOfItem = singleItem.reviews;
-  // console.log('reviewsOfItem extra data', reviewsOfItem);
-
-  // TO DO Calculate what this discount is and display it on the page.
-  // const price = singleItem.price;
-  // const discountedPrice = singleItem.discountedPrice;
-  // const discount = price - discountedPrice;
+  // Discount calculation
+  let discountOnItem = 0;
+  if (singleItem.price && singleItem.discountedPrice) {
+    discountOnItem = Math.round(singleItem.price - singleItem.discountedPrice);
+  }
 
   return (
     <>
@@ -63,10 +60,12 @@ const ItemPage = () => {
                 </button>
 
                 {/* Discount */}
-                {/* <div className="mt-10">
-                  <h2 className="text-lg font-medium text-gray-900">Discount:</h2>
-                  <div className="text-sm font-medium text-gray-700">Price went down and you save <span className="text-red-700">{discount}</span> NOK</div>
-                </div> */}
+                {discountOnItem > 0 && (
+                  <div className="mt-10">
+                    <h2 className="text-lg font-medium text-gray-900">Discount:</h2>
+                    <div className="text-sm font-medium text-gray-700">Price went down and you save <span className="text-red-700">{discountOnItem}</span> NOK</div>
+                  </div>
+                )}
 
                 {/* Product details */}
                 <div className="mt-4">
@@ -79,7 +78,7 @@ const ItemPage = () => {
                   <h2 className="text-lg font-medium text-gray-900 mb-2">Recent reviews:</h2>
                   <div className="flex items-center">
                     <div>
-                      {/* {reviewsOfItem.map((rev) => (
+                      {/* {singleItem.reviews.map((rev) => (
                         <div key={rev.id} className="group mb-4">
                           <p className="text-sm text-gray-900 flex items-center mb-2">
                             <span className="inline-block h-8 w-8 overflow-hidden rounded-full bg-gray-100">
