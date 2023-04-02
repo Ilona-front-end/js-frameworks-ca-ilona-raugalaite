@@ -15,7 +15,7 @@ export default function Homepage() {
 
   return (
     <div className="bg-white">
-
+      {/* Hero Section */}
       <div className="relative isolate overflow-hidden pt-14">
         <img
           src="https://images.unsplash.com/photo-1526135566407-7a34b1e7763f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80"
@@ -66,10 +66,10 @@ export default function Homepage() {
         </div>
       </div>
 
-
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-        <h2 className="sr-only">Products</h2>
-
+        <div className="text-center">
+          <h2 className="mb-6 text-3xl font-bold tracking-tight text-gray-800 sm:text-4xl">Products</h2>
+        </div>
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
           {items.map((item) => (
             <div key={item.id} className="group">
