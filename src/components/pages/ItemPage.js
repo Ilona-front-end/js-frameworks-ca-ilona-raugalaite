@@ -15,6 +15,13 @@ const ItemPage = () => {
     dispatch(fetchItem(id))
   }, [dispatch, id]);
 
+  // If path:item/id is manualy typed in the url and does not exist, redirect to homepage
+  let singleItemApiFetchStatusCodeError;
+  if(singleItem.statusCode === 404 || singleItem.statusCode === 500 || singleItem.statusCode === 400) {
+    window.location.href = "/";
+    singleItemApiFetchStatusCodeError = true;
+  }
+
   // Discount calculation
   let discountOnItem = 0;
   if (singleItem.price && singleItem.discountedPrice) {
@@ -25,6 +32,7 @@ const ItemPage = () => {
 
   return (
     <>
+      {singleItemApiFetchStatusCodeError === false &&
       <div className="bg-white">
         <div className="pb-16 pt-6 sm:pb-24">
           <div className="mx-auto mt-8 max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -104,6 +112,7 @@ const ItemPage = () => {
           </div>
         </div>
       </div>
+      }
     </>
   );
 }

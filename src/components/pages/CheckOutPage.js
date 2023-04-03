@@ -13,10 +13,9 @@ export default function CheckOutPage() {
     <div className="bg-white">
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:px-0">
         <h1 className="text-center text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Shopping Cart</h1>
-        
-        {amountOfItemsInBasket === 0 && <div>empty</div>}
-        {amountOfItemsInBasket >= 1 && 
-        <form className="mt-12">
+        {/* If-Else with Conditional Operator  ? : */}
+        {amountOfItemsInBasket >= 1 
+        ? <form className="mt-12">
           <section aria-labelledby="cart-heading">
             <h2 id="cart-heading" className="sr-only">Items in your shopping cart</h2>
 
@@ -90,7 +89,8 @@ export default function CheckOutPage() {
             </div>
           </section>
 
-        </form>
+        </form> 
+        : <div>empty</div>
         }   
       </div>
     </div>
