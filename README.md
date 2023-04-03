@@ -1,5 +1,7 @@
 # Javascript Frameworks CA - React App
 
+Link to website: [Buy it for your Mom](https://buy-it-for-your-mom.netlify.app)
+
 ### Available Scripts
 
 In the project directory, you can run:
