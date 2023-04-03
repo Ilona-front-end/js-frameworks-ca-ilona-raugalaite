@@ -18,7 +18,6 @@ const listSlice = createSlice({
     }
   }
 });
-console.log('listSlice', listSlice);
 export default listSlice.reducer;
 
 // Actions
@@ -30,7 +29,7 @@ export const fetchItems = () => async dispatch => {
   try {
     const response = await fetch('https://api.noroff.dev/api/v1/online-shop');
     const data = await response.json();
-    dispatch(INSERT_ITEMS(data)); // use INSERT_ITEMS to update items array
+    dispatch(INSERT_ITEMS(data)); 
   } catch (error) {
     console.log(error);
   }

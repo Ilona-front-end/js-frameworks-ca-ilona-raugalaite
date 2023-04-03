@@ -25,37 +25,12 @@ const Header = () => {
                   {/* <!-- Desktop menus --> */}
                   <div className="ml-8">
                     <div className="flex h-full justify-center space-x-8">
-                      {/* wommen */}
-                      {/* <div className="flex">
-                          <div className="relative flex">
-                            <button type="button" className="border-transparent text-gray-700 hover:text-gray-800 relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out" aria-expanded="false">Women</button>
-                          </div>
-                          <div className="absolute inset-x-0 top-full text-gray-500 sm:text-sm">
-                            <div className="absolute inset-0 top-1/2 bg-white shadow" aria-hidden="true"></div>
-                          </div>
-                        </div> */}
-                      {/* men */}
-                      {/* <div className="flex">
-                          <div className="relative flex">
-                            <button type="button" className="border-transparent text-gray-700 hover:text-gray-800 relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out" aria-expanded="false">Men</button>
-                          </div>
-                          <div className="absolute inset-x-0 top-full text-gray-500 sm:text-sm">
-                            <div className="absolute inset-0 top-1/2 bg-white shadow" aria-hidden="true"></div>
-                          </div>
-                        </div> */}
                     </div>
                   </div>
                 </div>
 
                 {/* <!-- Mobile menu and search (lg-) --> */}
                 <div className="flex flex-1 items-center lg:hidden">
-                  {/* <!-- Mobile burger menu toggle, controls the 'mobileMenuOpen' state. --> */}
-                  {/* <button type="button" className="-ml-2 rounded-md bg-white p-2 text-gray-400">
-                      <span className="sr-only">Open menu</span>
-                      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                      </svg>
-                    </button> */}
 
                   {/* <!-- Search --> */}
                   <Link to="/" className="ml-2 p-2 text-gray-400 hover:text-gray-500">

@@ -17,8 +17,6 @@ export default function ContactUsPage() {
     },
   });
 
-  // console.log("errors", errors);
-
   return (
     <>
       <div className="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
@@ -36,7 +34,7 @@ export default function ContactUsPage() {
               className="space-y-6"
               onSubmit={handleSubmit((data) => {
                 // required in CA to console.log the data from the form once validation requirements are met
-                console.log('data', data);
+                console.log('form validation success', data);
               })}
             >
               {/* NAME INPUT */}

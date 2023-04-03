@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 
 export default function Homepage() {
   const { items } = useSelector(state => state.list);
-  // console.log('items', items);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -19,7 +18,7 @@ export default function Homepage() {
       <div className="relative isolate overflow-hidden pt-14">
         <img
           src="https://images.unsplash.com/photo-1526135566407-7a34b1e7763f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80"
-          alt=""
+          alt="flowers in background"
           className="absolute inset-0 -z-10 h-full w-full object-cover"
         />
         <div
@@ -85,7 +84,6 @@ export default function Homepage() {
               <h3 className="mt-4 text-sm text-gray-700">{item.title}</h3>
               <p className="mt-1 flex justify-between font-bold">
                 <span className="text-lg text-blue-900">{Math.round(item.discountedPrice)} NOK</span>
-                {/* <span className="text-lg line-through text-red-700">{item.price} NOK</span> */}
               </p>
             </div>
           ))}

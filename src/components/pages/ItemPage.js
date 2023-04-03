@@ -26,8 +26,6 @@ const ItemPage = () => {
     discountOnItem = Math.round(singleItem.price - singleItem.discountedPrice).toFixed(); // converts a number to a string, rounded to a specified number of decimals:
   }
 
-  // Reviews
-
   return (
     <>
       <div className="bg-white">
@@ -82,28 +80,6 @@ const ItemPage = () => {
                   <div className="text-sm font-medium text-gray-700">{singleItem.description}</div>
                 </div>
 
-                {/* Reviews in details */}
-                <div className="mt-4">
-                  <h2 className="text-lg font-medium text-gray-900 mb-2">Recent reviews:</h2>
-                  <div className="flex items-center">
-                    <div>
-                      {/* {singleItem.reviews.map((rev) => (
-                        <div key={rev.id} className="group mb-4">
-                          <p className="text-sm text-gray-900 flex items-center mb-2">
-                            <span className="inline-block h-8 w-8 overflow-hidden rounded-full bg-gray-100">
-                              <svg className="h-full w-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-                              </svg>
-                            </span>
-                            <span className="px-4">{rev.username}</span>
-                          </p>
-                          <p className="text-sm font-medium text-yellow-600">{rev.rating} stars</p>
-                          <p className="text-sm font-medium text-gray-700">Comment: {rev.description}</p>
-                        </div>
-                      ))} */}
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

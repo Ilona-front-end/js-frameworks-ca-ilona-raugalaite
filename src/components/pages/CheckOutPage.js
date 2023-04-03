@@ -7,15 +7,12 @@ import { Link } from "react-router-dom";
 export default function CheckOutPage() {
   const dispatch = useDispatch();
   const {itemsInBasket, amountOfItemsInBasket} = useSelector((state) => state.basket);
-  // console.log('itemsInBasket', itemsInBasket);
 
 // sum price of basket order
   let sumOfPrice = itemsInBasket.reduce((acc, item) => {
     return acc + item.discountedPrice;
   }, 0);
   sumOfPrice = Math.round(sumOfPrice);
-  console.log('sumOfPrice', sumOfPrice);
-
 
   return (
     <div className="bg-white">
