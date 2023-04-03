@@ -23,7 +23,7 @@ const ItemPage = () => {
   // Discount calculation
   let discountOnItem = 0;
   if (singleItem.price && singleItem.discountedPrice) {
-    discountOnItem = Math.round(singleItem.price - singleItem.discountedPrice);
+    discountOnItem = Math.round(singleItem.price - singleItem.discountedPrice).toFixed(); // converts a number to a string, rounded to a specified number of decimals:
   }
 
   // Reviews
@@ -37,7 +37,7 @@ const ItemPage = () => {
               <div className="lg:col-span-5 lg:col-start-8">
                 <div className="flex justify-between">
                   <h1 className="text-xl font-medium text-gray-900">{singleItem.title}</h1>
-                  <p className="text-xl font-medium text-gray-900">{singleItem.discountedPrice} NOK</p>
+                  <p className="text-xl font-medium text-gray-900">{Math.round(singleItem.discountedPrice)} NOK</p>
                 </div>
                 {/* Reviews */}
                 <div className="mt-4">

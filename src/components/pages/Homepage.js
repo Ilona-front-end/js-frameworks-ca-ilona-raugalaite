@@ -84,7 +84,7 @@ export default function Homepage() {
               </div>
               <h3 className="mt-4 text-sm text-gray-700">{item.title}</h3>
               <p className="mt-1 flex justify-between font-bold">
-                <span className="text-lg text-blue-900">{item.discountedPrice} NOK</span>
+                <span className="text-lg text-blue-900">{Math.round(item.discountedPrice)} NOK</span>
                 {/* <span className="text-lg line-through text-red-700">{item.price} NOK</span> */}
               </p>
             </div>

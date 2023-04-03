@@ -9,6 +9,14 @@ export default function CheckOutPage() {
   const {itemsInBasket, amountOfItemsInBasket} = useSelector((state) => state.basket);
   // console.log('itemsInBasket', itemsInBasket);
 
+// sum price of basket order
+  let sumOfPrice = itemsInBasket.reduce((acc, item) => {
+    return acc + item.discountedPrice;
+  }, 0);
+  sumOfPrice = Math.round(sumOfPrice);
+  console.log('sumOfPrice', sumOfPrice);
+
+
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:px-0">
@@ -34,10 +42,9 @@ export default function CheckOutPage() {
                     <div>
                       <div className="flex justify-between">
                         <h4 className="text-sm"><span className="font-medium text-gray-700 hover:text-gray-800">{itemInBasket.title}</span></h4>
-                        <p className="ml-4 text-sm font-medium text-gray-900">{itemInBasket.discountedPrice} NOK</p>
+                        <p className="ml-4 text-sm font-medium text-gray-900">{Math.round(itemInBasket.discountedPrice)} NOK</p>
                       </div>
-                      <p className="mt-1 text-sm text-gray-500">Discounted Price {itemInBasket.discountedPrice}</p>
-                      <p className="mt-1 text-sm text-gray-500">Price before {itemInBasket.price}</p>
+                      {itemInBasket.discountedPrice === itemInBasket.price ? <span></span> : <p className="mt-1 text-sm text-gray-500">Price before {Math.round(itemInBasket.price)} NOK</p>}
                     </div>
                   </div>
                 </div>
@@ -53,7 +60,7 @@ export default function CheckOutPage() {
               <dl className="space-y-4">
                 <div className="flex items-center justify-between">
                   <dt className="text-base font-medium text-gray-900">Subtotal</dt>
-                  <dd className="ml-4 text-base font-medium text-gray-900">$96.00</dd>
+                  <dd className="ml-4 text-base font-medium text-gray-900">{sumOfPrice} NOK</dd>
                 </div>
               </dl>
               <p className="mt-1 text-sm text-gray-500">Shipping and taxes will be calculated at checkout.</p>
