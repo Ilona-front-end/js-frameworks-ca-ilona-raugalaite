@@ -67,12 +67,15 @@ export default function CheckOutPage() {
             </div>
             {/* Check out button */}
             <div className="mt-10">
-              <button
-                type="submit"
-                className="w-full rounded-md border border-transparent bg-indigo-600 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
-              >
-                Checkout
-              </button>
+              <Link to="/congratulations">
+                <button
+                  type="button"
+                  className="w-full rounded-md border border-transparent bg-indigo-600 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+                  onClick={()=>dispatch(deleteOrder(itemsInBasket))}
+                >
+                  Checkout
+                </button>
+              </Link>
             </div>
             {/* Delete button */}
             <div className="mt-10">
